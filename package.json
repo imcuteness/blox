@@ -1,0 +1,18 @@
+{
+  "name": "minecraft-blocks-mp",
+  "version": "1.0.0",
+  "description": "Минимальная многопользовательская блоковая игра (Node.js + Socket.IO + Three.js + SQLite)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "socket.io": "^4.7.2",
+    "sqlite3": "^5.1.6"
+  }
+}

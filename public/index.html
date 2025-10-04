@@ -1,0 +1,36 @@
+<!-- public/index.html -->
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>BlockWorld (MP)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/style.css" />
+  <!-- Three.js CDN -->
+  <script src="https://unpkg.com/three@0.163.0/build/three.min.js"></script>
+  <!-- Socket.IO client CDN -->
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <div id="overlay" class="overlay">
+    <div class="auth-box">
+      <h2>BlockWorld — войти или зарегистрироваться</h2>
+      <input id="username" placeholder="Имя" />
+      <input id="password" type="password" placeholder="Пароль" />
+      <div class="buttons">
+        <button id="btn-register">Зарегистрироваться</button>
+        <button id="btn-login">Войти</button>
+      </div>
+      <div id="auth-msg" class="small"></div>
+    </div>
+  </div>
+
+  <div id="hud">
+    <div>WASD — ходить | ЛКМ — ломать | ПКМ — ставить | пробел — вверх</div>
+  </div>
+
+  <div id="game-container"></div>
+
+  <script src="/client.js"></script>
+</body>
+</html>
