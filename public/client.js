@@ -155,8 +155,20 @@ function removePlayerVisual(socketId) {
 
 // ---------- Input & movement ----------
 const keys = {};
-window.addEventListener('keydown',(e)=>{ keys[e.key.toLowerCase()] = true; });
-window.addEventListener('keyup',(e)=>{ keys[e.key.toLowerCase()] = false; });
+window.addEventListener('keydown', (e) => {
+  if (!e.key) return;                 // ключ undefined → пропускаем
+  const tag = e.target.tagName;
+  if (tag === 'INPUT' || tag === 'TEXTAREA') return; // игнорируем, если пишем текст
+  keys[e.key.toLowerCase()] = true;
+});
+
+window.addEventListener('keyup', (e) => {
+  if (!e.key) return;
+  const tag = e.target.tagName;
+  if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+  keys[e.key.toLowerCase()] = false;
+});
+
 
 let myPos = { x:0, y:2, z:0 };
 let lastSent = 0;
